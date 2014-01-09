@@ -3,7 +3,7 @@ require 'test_helper'
 class HTTPCheckTest < MiniTest::Test
   def test_works_with_string
     @checker = Spacejam::HTTPCheck.new('http://www.google.com/')
-    assert @checker.online?
+    assert @checker.online?   
   end
 
   def test_works_with_hash
