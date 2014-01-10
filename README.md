@@ -1,10 +1,15 @@
 # Spacejam -- A simple tool to check on the status of a website
 
 Spacejam is a ruby library for checking on the status of a website.
-You can use it to check if a page or site is online. It's basically a
-very simple wrapper around Curl. Here's how it works:
+You can use it to check if a page or site is online. I wrote it to
+keep an eye on the website for
+[Space Jam](http://www2.warnerbros.com/spacejam/movie/jam.htm). I
+wrote a [Twitter bot](https://twitter.com/SpaceJamCheck) that checks
+the status of the website multiple times a day.
 
-    require 'spacejam'
+The library is basically a very simple wrapper around Curl. Here's how
+it works:
+
 
     Spacejam.online?('http://muffinlabs.com')
     => true
@@ -14,7 +19,7 @@ very simple wrapper around Curl. Here's how it works:
     x.online?
     => true
 
-Instead of just passing a URL, you can pass a URL and an expected
+Instead of just passing a URL, you can pass a hash with the URL and an expected
 response code:
 
     x = Spacejam::HTTPCheck.new(url:'http://muffinlabs.com/missing_file.html', response_code:200)
@@ -29,7 +34,7 @@ You can also check non-200 response codes. Admittedly, looking for a
     x.online?
     => true
 
-Or you can check the body content of the page:
+Also, you can check the body content of the page:
 
     x = Spacejam::HTTPCheck.new(url:'http://muffinlabs.com/', body:"A string to check for")
     x.online?

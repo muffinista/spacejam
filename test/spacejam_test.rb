@@ -1,6 +1,10 @@
 require 'test_helper'
 
 class SpacejamTest < MiniTest::Test
+  def test_online_works
+    assert Spacejam.online?('http://www.google.com/')
+  end
+
   def test_works_with_string
     @checker = Spacejam.check('http://www.google.com/')
     assert @checker.online?   

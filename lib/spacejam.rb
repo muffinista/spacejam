@@ -7,5 +7,9 @@ module Spacejam
     def check(*args)
       Spacejam::HTTPCheck.new(*args)
     end
+
+    def online?(*args)
+      Spacejam::HTTPCheck.new(*args).online?
+    end
   end
 end
