@@ -62,6 +62,12 @@ The possible values are:
      remote server was inaccessible or unresponsive.
 
 
+Finally, if all you want to do is check on the status of the movie website,
+there's a shortcut for that:
+
+    Spacejam.is_spacejam_online?
+
+
 ## Installation
 
 Add this line to your application's Gemfile:
