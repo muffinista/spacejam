@@ -11,5 +11,9 @@ module Spacejam
     def online?(*args)
       Spacejam::HTTPCheck.new(*args).online?
     end
+
+    def is_spacejam_online?
+      Spacejam::HTTPCheck.new(url:"http://www2.warnerbros.com/spacejam/movie/jam.htm", body:"<title>Space Jam</title>").online?
+    end
   end
 end
